@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
     width: 600px;
-    background-color: #4c68d7;
+    background-color: rgb(189, 189, 189);
 }
 
 #picdiv {
@@ -13,7 +13,7 @@ img {
     width: 350px;
     height: 300px;
     margin-top: 25px;
-    border: 5px #1d45e7
+    border: 25px solid #1d45e7
 }
 
 button {
