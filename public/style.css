@@ -1,0 +1,32 @@
+body {
+    margin: 0 auto;
+    width: 600px;
+    background-color: #4c68d7;
+}
+
+#picdiv {
+    width: 400px;
+    margin: 0 auto;
+}
+
+img {
+    width: 350px;
+    height: 300px;
+    margin-top: 25px;
+    border: 5px #1d45e7
+}
+
+button {
+    width: 100px;
+    height: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+
+    width: 400px;
+    margin: 0 auto;
+}
