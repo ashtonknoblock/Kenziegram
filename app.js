@@ -7,6 +7,7 @@ const app = express();
 const uploaded_files = [];
 const uploadsPath = './public/uploads';
 
+
 app.set('view engine', 'pug')
 app.use(express.static('public'));
 app.listen(port);
@@ -22,7 +23,27 @@ app.post('/', upload.single('file'), function (req, res, next) {
     // req.file is the `file` file
     // req.body will hold the text fields, if there were any
     console.log("Uploaded: " + req.file.filename);
-    uploaded_files.push(req.file.filename);
+
+    var itemObject = {
+        picName: req.file.filename,
+        timestamp: Date.now(),
+    };
+
+    uploaded_files.push(itemObject);
     res.redirect("/");
+});
+
+app.get('/latest', (req, res) => {
+    const now = Date.now();
+    res.render("main")
+}) 
+
+app.post('/latest', (req,res) => {
+    res.statusCode = 200;
+    for (let i = 0; i > uploaded_files.length; i++) {
+        for(itemObject in uploaded_files) {
+            console.log(timestamp)
+        }
+    }
 });
 
