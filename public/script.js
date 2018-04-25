@@ -1,7 +1,7 @@
 //CLIENT SIDE
 const picdiv = document.getElementById("picdiv"); //div that each new picture goes in
 
-let USERtimestamp = new Date.now();
+let USERtimestamp = Date.now();
 
 function Fetchfunction() {
     console.log("testing")
@@ -16,16 +16,15 @@ function Fetchfunction() {
     }
     fetch("/latest", postOptions)
         .then(response => response.json())
-        .then(data => { 
+        .then(data => {
             if (data.timestamp > USERtimestamp) {
                 data.images.forEach(src => {
                     const img = document.createElement("img");
                     img.src = src;
-                    picdiv.body.appendChild(img);
+                    picdiv.appendChild(img);
                 })
             }
-            USERtimestamp = data.timestamp;
-            // return USERtimestamp;
         })
 }
-setInterval(Fetchfunction, 5000);
+var interval = setInterval(Fetchfunction, 5000);
+

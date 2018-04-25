@@ -4,10 +4,10 @@ head
     link(rel='stylesheet' href='style.css')
     title Kenziegram
 body
-    h1 Welcome to Kenziegram!
-
+    h1 Kenziegram
+#container
     form(method="post" action="/upload" enctype="multipart/form-data")
-        legend Choose a Picture:
+        legend <p>Select a picture to upload:
             input(type="file" id="user_file" name="file" autofocus)
             button(type="submit") Upload Picture
 
